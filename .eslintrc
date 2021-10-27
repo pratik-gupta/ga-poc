@@ -1,0 +1,6 @@
+{
+    "rules": {
+      "strict": "off",
+      "no-console": "off"
+    }
+  }
