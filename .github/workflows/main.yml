@@ -22,7 +22,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.15.1
+          registry-url: https://registry.npmjs.org/
+          cache: 'npm'
+      - run: npm install --always-auth=true --no-optional
       # Runs a single command using the runners shell
       - name: Run Lint
         run: npm run lint
